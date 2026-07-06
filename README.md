@@ -11,8 +11,8 @@ Reconstructing metabolic networks for eukaryotic microalgae poses unique challen
 1. **_De novo_ reconstruction:** Uses **CarveMe** to build a draft metabolic model from a protein FASTA file (`.faa`). Eukaryotic guidance is achieved by supplying orthology data via the `-i` (initialization) flag.
 2. **Dynamic functional enrichment:** Parses **eggNOG-mapper** outputs dynamically to cross-reference and enrich missing Enzyme Commission (EC) numbers and KEGG Orthology (KO) terms, avoiding brittle hardcoded table indices.
 3. **Targeted enzyme screening:** Performs multi-angle matching to identify and report the presence of critical enzymes:
-   * **Carbonic Anhydrase** (EC 4.2.1.1) — Key for Carbon Concentrating Mechanisms (CCM) and Calcification.
-   * **Urease** (EC 3.5.1.5) — Crucial for Nitrogen assimilation.
+   * **Carbonic Anhydrase** (EC 4.2.1.1) — Key for carbon capture and carbonate bioprecipitation.
+   * **Urease** (EC 3.5.1.5) — Crucial for nitrogen assimilation.
 4. **Network visualization:** Maps the microalgae's metabolic repertoire onto the **RECON1 (Metabolic Core)** eukaryotic template using **Escher**, highlighting present pathways in green and absent ones in gray.
 
 ## Dependencies and prerequisites
@@ -22,14 +22,14 @@ The pipeline relies on both standalone bioinformatics binaries and Python librar
 ### Core Requirements:
 * **Python 3.11** (Recommended for stability across COBRApy and CarveMe packages).
 * **Diamond** (Ultra-fast protein aligner used internally by CarveMe).
-* **Linear Programming (LP) Solver:** **CPLEX** (via pip) or **Gurobi** is mandatory for CarveMe to optimize and prune the universal metabolic network.
+* **Linear Programming Solver:** CPLEX (via pip) or Gurobi is mandatory for CarveMe to optimize and prune the universal metabolic network.
 * **Tkinter:** Python's standard GUI library for interactive file selection dialogs.
 
 ---
 
 ## Installation Guide
 
-To avoid dependency conflicts, it is highly recommended to install this pipeline inside a dedicated **Conda** environment.
+To avoid dependency conflicts, it is highly recommended to install this pipeline inside a dedicated Conda environment.
 
 ### Linux Setup (Terminal)
 
@@ -57,10 +57,10 @@ If you encounter an error stating 'powershell' is not recognized, your system PA
 
 ```bash
 # 1. Create a clean dedicated environment
-conda create -n pipe_alga python=3.11 -y
+conda create -n environment_name python=3.11 -y
 
 # 2. Activate the environment
-conda activate pipe_alga
+conda activate environment_name
 
 # 3. Install binary dependencies
 conda install -c bioconda diamond -y
