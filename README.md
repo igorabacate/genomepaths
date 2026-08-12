@@ -88,7 +88,7 @@ Set the path to your new environment's Python binary:
 Restart your IPython console.
 
 ### 2. Execute the script:
-Run the pipegenome.py file. Interactive native pop-up windows will appear mimicking R's choose.file() behavior:
+Run the genomepaths.py file. Interactive native pop-up windows will appear mimicking R's choose.file() behavior:
 
 Select your Microalgae Protein FASTA file (.faa).
 
